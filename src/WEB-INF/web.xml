@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app version="2.4">
+
+    <display-name>Symfony Servlet Example</display-name>
+    <description>Simple Web Servlet Example based on Symfony 2</description>
+
+    <servlet>
+        <description><![CDATA[A simple Symfony 2 servlet.]]></description>
+        <display-name>SymfonyServlet</display-name>
+        <servlet-name>SymfonyServlet</servlet-name>
+        <servlet-class>\Acme\DemoBundle\Servlets\SymfonyServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <description/>
+        <display-name>StaticResourceServlet</display-name>
+        <servlet-name>StaticResourceServlet</servlet-name>
+        <servlet-class>\TechDivision\ServletContainer\Servlets\StaticResourceServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>StaticResourceServlet</servlet-name>
+        <url-pattern>/bundles/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>SymfonyServlet</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>SymfonyServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+</web-app>
